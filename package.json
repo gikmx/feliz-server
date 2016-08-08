@@ -1,0 +1,66 @@
+{
+  "name": "feliz-server-hapi",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "author": "Héctor Menéndez <etor@gik.mx>",
+  "license": "MIT",
+  "analyze": true,
+  "keywords": [
+    "feliz",
+    "rx",
+    "server",
+    "hapi",
+    "hapi.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gikmx/feliz-server-hapi"
+  },
+  "bugs": {
+    "url": "https://github.com/gikmx/feliz-server-hapi/issues"
+  },
+  "engines": {
+    "node": ">=6.2.0"
+  },
+  "scripts": {
+    "start": "npm-watch",
+    "docs": "jsdoc2md -t ./template.hbs 'lib/**/*.js' > README.md",
+    "test": "tape ./test/index.js | tap-spec",
+    "cover": "npm run cover:stats && npm run cover:send",
+    "cover:check": "npm run cover:stats && istanbul check-coverage",
+    "cover:stats": "istanbul cover tape -- ./test/index.js",
+    "cover:send": "cat ./coverage/lcov.info | coveralls",
+    "precommit": "npm test && npm run cover:check && npm run docs && git add --force README.md && feliz.hooks pre-commit"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.12",
+    "feliz.hooks": "0.0.5",
+    "husky": "^0.11.5",
+    "istanbul": "^0.4.4",
+    "jsdoc-to-markdown": "^1.3.6",
+    "npm-watch": "git+https://github.com/hectormenendez/npm-watch.git",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.0"
+  },
+  "watch": {
+    "test": {
+      "patterns": [
+        "lib",
+        "test"
+      ],
+      "extensions": "js",
+      "inherit": true
+    },
+    "docs": {
+      "patterns": [
+        "lib",
+        "template.hbs"
+      ],
+      "extensions": "js",
+      "inherit": true
+    }
+  }
+}
