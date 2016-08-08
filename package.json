@@ -1,6 +1,6 @@
 {
   "name": "feliz-server-hapi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "lib/index.js",
   "author": "Héctor Menéndez <etor@gik.mx>",
@@ -33,10 +33,10 @@
     "cover:send": "cat ./coverage/lcov.info | coveralls",
     "precommit": "npm test && npm run cover:check && npm run docs && git add --force README.md && feliz.hooks pre-commit"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "coveralls": "^2.11.12",
+    "feliz": "0.0.17",
     "feliz.hooks": "0.0.5",
     "husky": "^0.11.5",
     "istanbul": "^0.4.4",
