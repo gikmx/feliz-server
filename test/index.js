@@ -1,38 +1,27 @@
 'use strict';
 
-const Test = require('feliz.test');
+const PATH   = require('path');
+const Test   = require('feliz.test');
+const Server = require('../lib/server');
 
-const test = new Test([
+const path = { root: PATH.join(__dirname, 'app') };
+
+const conf = {
+    root   : path.root,
+    plugins: [Server]
+};
+
+const tests = [
     {
-        desc:'The observable plugin',
-        data: [
-            {
-                desc: 'no route file is found',
-                conf: { root: './holamundo' },
-                pass: false
-            },
-            {
-                desc:'I am another test',
-                conf: { root: './adiosmundo' },
-                pass: true
-            }
-        ]
-    },
-    {
-        desc:'The observable plugin 1',
-        data: [
-            {
-                desc: 'no route file is found 1',
-                conf: { root: './holamundo' },
-                pass: false
-            },
-            {
-                desc:'I am another test 1',
-                conf: { root: './adiosmundo' },
-                pass: true
-            }
-        ]
+        conf,
+        desc: 'failing on purpose',
+        pass: false
     }
-]);
+];
 
-test.run();
+const test$ = Test([{
+    desc: 'The feliz instance when using the server-hapi plugin',
+    test: tests
+}]);
+
+test$.subscribe();
