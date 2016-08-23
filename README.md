@@ -20,6 +20,8 @@ Todo
 
 ## API Documentation (WIP)
 
+The defaul configuration options
+
 
 ---
 
