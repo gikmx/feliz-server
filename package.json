@@ -37,7 +37,7 @@
     "precommit": "npm test && npm run cover:check && npm run docs && npm version prerelease --no-git-tag-version"
   },
   "dependencies": {
-    "feliz-router": "0.1.0-beta.6",
+    "feliz-router": "0.1.0-beta.8",
     "hapi": "^14.2.0"
   },
   "devDependencies": {
