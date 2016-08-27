@@ -1,12 +1,11 @@
-[![Build
-Status](https://travis-ci.org/gikmx/feliz-server.svg?branch=master)](https://travis-ci.org/gikmx/feliz-server)
+[![Build Status](https://travis-ci.org/gikmx/feliz-server.svg?branch=master)](https://travis-ci.org/gikmx/feliz-server)
 [![Coverage
 Status](https://coveralls.io/repos/github/gikmx/feliz-server/badge.svg?branch=master)](https://coveralls.io/github/gikmx/feliz-server?branch=master)
 <br>
 [![NPM](https://nodei.co/npm/feliz-server.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/feliz-server/)
 
 # feliz-server
-A plugin for [hapi.js](http://github.com/gikmx/feliz) that enables easy usage of hapi.js
+A plugin for [feliz.js](http://github.com/gikmx/feliz) that enables easy usage of hapi.js
 
 ## Compatibility
 
