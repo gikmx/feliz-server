@@ -1,20 +1,17 @@
 [![Build
-Status](https://travis-ci.org/gikmx/feliz.svg?branch=master)](https://travis-ci.org/gikmx/feliz-server-hapi)
+Status](https://travis-ci.org/gikmx/feliz-server.svg?branch=master)](https://travis-ci.org/gikmx/feliz-server)
 [![Coverage
-Status](https://coveralls.io/repos/github/gikmx/feliz/badge.svg?branch=master)](https://coveralls.io/github/gikmx/feliz-server-hapi?branch=master)
+Status](https://coveralls.io/repos/github/gikmx/feliz-server/badge.svg?branch=master)](https://coveralls.io/github/gikmx/feliz-server?branch=master)
 <br>
-[![NPM](https://nodei.co/npm/feliz.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/feliz-server-hapi/)
+[![NPM](https://nodei.co/npm/feliz-server.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/feliz-server/)
 
-# feliz-server-hapi
+# feliz-server
 A plugin for [hapi.js](http://github.com/gikmx/feliz) that enables easy usage of hapi.js
 
 ## Compatibility
 
 * Node v6.2+
 * MacOS, Linux, Windows (untested)
-
-## API Documentation (WIP)
-Todo
 
 ---
 
