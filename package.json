@@ -1,5 +1,5 @@
 {
-  "name": "feliz-server-hapi",
+  "name": "feliz-server",
   "version": "0.1.0-beta.5",
   "description": "",
   "main": "lib/server.js",
@@ -14,10 +14,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/gikmx/feliz-server-hapi"
+    "url": "https://github.com/gikmx/feliz-server"
   },
   "bugs": {
-    "url": "https://github.com/gikmx/feliz-server-hapi/issues"
+    "url": "https://github.com/gikmx/feliz-server/issues"
   },
   "engines": {
     "node": ">=6.2.0"
