@@ -62,20 +62,36 @@ const test$ = Test([{
         },
         {
             desc: 'registering an valid empty plugin',
-            conf: Object.assign({ server:{ plugins:[PluginValid] }}, conf),
             pass: true,
-            call: function(tape, response) { return Request(response.server.listener)
-                .get('/')
-                .expect(200, (err, res) => {
-                    tape.equal(err, null, `should not throw an error when ${this.desc}`)
-                    response.server.stop({}, err => {
-                        const msg1 = `should shutdown normally when ${this.desc}`;
-                        const msg2 = `should register the plugin when ${this.desc}`;
-                        tape.equal(err, undefined, msg1);
-                        tape.equal(response.__test, true, msg2);
-                        tape.end();
-                    });
-                })
+            conf: Object.assign({
+                server: {
+                    plugins: [PluginValid]
+                },
+                events: [
+                    // Once the server is ready, register a route
+                    { name: 'plugins:server', call:function(){
+                        this.server.route({
+                            method  : ['GET'],
+                            path    : '/',
+                            handler : (req, reply) => reply('ok')
+                        })
+                    }}
+                ]
+            }, conf),
+            call: function(tape, response) {
+                return Request(response.server.listener)
+                    .get('/')
+                    .expect(200, (err, res) => {
+                        tape.equal(err, null, `should not throw an error when ${this.desc}`)
+                        if (err) console.error(err);
+                        response.server.stop({}, err => {
+                            const msg1 = `should shutdown normally when ${this.desc}`;
+                            const msg2 = `should register the plugin when ${this.desc}`;
+                            tape.equal(err, undefined, msg1);
+                            tape.equal(response.__test, true, msg2);
+                            tape.end();
+                        });
+                    })
             }
         }
     ]
